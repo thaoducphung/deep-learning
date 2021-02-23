@@ -14,3 +14,17 @@ print('b.grad',b.grad)
 # check if collected gradients are correct
 print(9*a**2 == a.grad)
 print(-2*b == b.grad)
+
+x = torch.rand(5,5)
+print(x)
+
+y = torch.rand(5,5)
+print(y)
+
+z = torch.rand((5,5),requires_grad=True)
+a = x + y
+print(f"Does `a` require gradients? : {a.requires_grad}")
+b = x + z
+print(f"Does `b` require gradients?: {b.requires_grad}")
+
+print(b.grad)
